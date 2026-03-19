@@ -49,13 +49,14 @@ namespace GachaRPG
 
         private void Awake()
         {
-            if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+            if (Instance != null && Instance != this)
+            {
+                Debug.LogWarning($"[HUD] Duplicate BattleHUD detected on '{gameObject.name}' — destroying. Active instance is on '{Instance.gameObject.name}'");
+                Destroy(gameObject);
+                return;
+            }
+            Debug.Log($"[HUD] Awake — Instance set on '{gameObject.name}'");
             Instance = this;
-        }
-
-        private void Start()
-        {
-            battleManager = FindObjectOfType<BattleManager>();
         }
 
         /// <summary>
@@ -64,6 +65,8 @@ namespace GachaRPG
         /// </summary>
         public void Init()
         {
+            Debug.Log("[HUD] Init");
+            battleManager = FindFirstObjectByType<BattleManager>();
             s1Button.onClick.AddListener(() => OnSkillButtonPressed(SkillSlot.S1));
             s2Button.onClick.AddListener(() => OnSkillButtonPressed(SkillSlot.S2));
             s3Button.onClick.AddListener(() => OnSkillButtonPressed(SkillSlot.S3));
@@ -107,6 +110,9 @@ namespace GachaRPG
 
         private void OnSkillButtonPressed(SkillSlot slot)
         {
+            Debug.Log($"[HUD] Skill button pressed: {slot}");
+            if (currentUnit == null) { Debug.LogError("No current unit"); return; };
+            if (selectedTarget == null) { Debug.LogError("No selected unit"); return; };
             if (currentUnit == null || selectedTarget == null) return;
             battleManager.SubmitPlayerAction(slot, selectedTarget, soulBurnActive);
             HideSkillButtons();

@@ -24,7 +24,7 @@ namespace GachaRPG
         private List<BattleUnit> persistedPlayerUnits;
 
         // Scoring factors accumulated per round
-        private int totalDamageTaken = 0;
+        // private int totalDamageTaken = 0;
 
         public BossRushMode(string globalModifier = "")
         {

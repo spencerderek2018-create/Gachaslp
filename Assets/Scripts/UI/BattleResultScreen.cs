@@ -45,7 +45,7 @@ namespace GachaRPG
 
         private void Start()
         {
-            var battleManager = FindObjectOfType<BattleManager>();
+            var battleManager = FindFirstObjectByType<BattleManager>();
             if (battleManager != null)
                 battleManager.OnBattleEnded += (won) => Show(won, null);
 

@@ -29,7 +29,7 @@ namespace GachaRPG
         {
             // Find the SoulManager via BattleManager
             // In a real implementation this would be injected or found through a service locator
-            var battle = FindObjectOfType<BattleManager>();
+            var battle = FindFirstObjectByType<BattleManager>();
             if (battle == null) return;
 
             // SoulManager is private in BattleManager — expose via event subscription

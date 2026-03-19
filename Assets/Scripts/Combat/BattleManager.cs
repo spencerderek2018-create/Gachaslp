@@ -209,6 +209,7 @@ namespace GachaRPG
         /// </summary>
         public void SubmitPlayerAction(SkillSlot slot, BattleUnit target, bool soulBurn = false)
         {
+            Debug.Log($"[BattleManager] SubmitPlayerAction: {slot} {target.Data.heroName} {soulBurn}");
             if (activeUnit == null || !activeUnit.IsPlayerTeam) return;
 
             SkillData skill = slot switch

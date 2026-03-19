@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;  // still needed for EventSystem / StandaloneInputModule
 using UnityEngine.UI;
+using UnityEngine.InputSystem.UI;
 using TMPro;
+
 
 namespace GachaRPG
 {
@@ -32,7 +34,7 @@ namespace GachaRPG
 
         private void Start()
         {
-            var bm = FindObjectOfType<BattleManager>();
+            var bm = FindFirstObjectByType<BattleManager>();
             if (bm == null)
             {
                 Debug.LogError("[UIBuilder] BattleManager not found in scene.");
@@ -90,10 +92,10 @@ namespace GachaRPG
 
         private static void EnsureEventSystem()
         {
-            if (FindObjectOfType<EventSystem>() != null) return;
+            if (FindFirstObjectByType<EventSystem>() != null) return;
             var esGo = new GameObject("EventSystem");
             esGo.AddComponent<EventSystem>();
-            // Input module is handled automatically by the New Input System package
+            esGo.AddComponent<InputSystemUIInputModule>();
         }
 
         // ── canvas ────────────────────────────────────────────────────
@@ -257,7 +259,8 @@ namespace GachaRPG
                     btn.colors = colors;
                     btn.onClick.AddListener(() =>
                     {
-                        var bm = FindObjectOfType<BattleManager>();
+                        Debug.Log($"[UIBuilder] Enemy panel clicked: {captured}");
+                        var bm = FindFirstObjectByType<BattleManager>();
                         if (bm == null) return;
                         var enemies = bm.GetEnemyUnits();
                         if (captured < enemies.Count)
@@ -382,6 +385,7 @@ namespace GachaRPG
             img.color = tint;
 
             var btn    = go.AddComponent<Button>();
+            btn.targetGraphic = img; // required when adding Button via code
             btn.interactable = false; // disabled until it's the player's turn
             var colors = btn.colors;
             colors.highlightedColor = tint * 1.4f;
@@ -394,23 +398,25 @@ namespace GachaRPG
             rt.offsetMin = new Vector2(3, 2);
             rt.offsetMax = new Vector2(-3, -2);
 
-            // Label
+            // Label — raycastTarget=false so the button's Image receives clicks directly
             var labelGo  = MakeChild(go, "Label");
             var labelTmp = labelGo.AddComponent<TextMeshProUGUI>();
-            labelTmp.fontSize  = 13;
-            labelTmp.alignment = TextAlignmentOptions.Center;
-            labelTmp.color     = Color.white;
-            labelTmp.text      = defaultText;
+            labelTmp.fontSize      = 13;
+            labelTmp.alignment     = TextAlignmentOptions.Center;
+            labelTmp.color         = Color.white;
+            labelTmp.text          = defaultText;
+            labelTmp.raycastTarget = false;
             SetAnchors(labelGo, 0, 0.4f, 1, 1);
 
             // Cooldown overlay
             var cdGo  = MakeChild(go, "Cooldown");
             var cdTmp = cdGo.AddComponent<TextMeshProUGUI>();
-            cdTmp.fontSize  = 20;
-            cdTmp.fontStyle = FontStyles.Bold;
-            cdTmp.alignment = TextAlignmentOptions.Center;
-            cdTmp.color     = new Color(1f, 0.55f, 0.1f);
-            cdTmp.text      = "";
+            cdTmp.fontSize      = 20;
+            cdTmp.fontStyle     = FontStyles.Bold;
+            cdTmp.alignment     = TextAlignmentOptions.Center;
+            cdTmp.color         = new Color(1f, 0.55f, 0.1f);
+            cdTmp.text          = "";
+            cdTmp.raycastTarget = false;
             SetAnchors(cdGo, 0, 0, 1, 0.45f);
 
             return (go, labelTmp, cdTmp);

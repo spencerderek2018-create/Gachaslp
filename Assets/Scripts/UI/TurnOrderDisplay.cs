@@ -34,7 +34,7 @@ namespace GachaRPG
 
         private void Start()
         {
-            battleManager = FindObjectOfType<BattleManager>();
+            battleManager = FindFirstObjectByType<BattleManager>();
             if (battleManager != null)
                 battleManager.OnTurnOrderUpdated += Refresh;
         }
