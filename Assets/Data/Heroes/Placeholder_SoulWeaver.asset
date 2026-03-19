@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606974a7ddee60d4eb500aecaff99203, type: 3}
+  m_Name: Placeholder_SoulWeaver
+  m_EditorClassIdentifier: Assembly-CSharp::GachaRPG.HeroData
+  heroName: Tide Priest
+  element: 1
+  role: 4
+  rarity: 2
+  baseHP: 6200
+  baseATK: 1000
+  baseDEF: 500
+  baseSpeed: 115
+  baseCritRate: 0.1
+  baseCritDamage: 1.3
+  baseEffectiveness: 0.2
+  baseEffectResist: 0.6
+  s1_BasicAttack: {fileID: 11400000, guid: 317c85fd993ae8f4b86c586d54b3d80f, type: 2}
+  s2: {fileID: 11400000, guid: 3cf230b6a0c7f994b81f8f2bd65a1027, type: 2}
+  s3_Ultimate: {fileID: 11400000, guid: 75e66c98c770ef14b9729cbcfe8b31fa, type: 2}
+  s4_Passive: {fileID: 0}
+  defaultArtifact: {fileID: 0}
+  awakeningLevel: 0
+  level: 1

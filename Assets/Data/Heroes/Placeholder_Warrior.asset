@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606974a7ddee60d4eb500aecaff99203, type: 3}
+  m_Name: Placeholder_Warrior
+  m_EditorClassIdentifier: Assembly-CSharp::GachaRPG.HeroData
+  heroName: Ember Berserker
+  element: 0
+  role: 1
+  rarity: 2
+  baseHP: 5800
+  baseATK: 1500
+  baseDEF: 400
+  baseSpeed: 100
+  baseCritRate: 0.25
+  baseCritDamage: 1.7
+  baseEffectiveness: 0.4
+  baseEffectResist: 0.1
+  s1_BasicAttack: {fileID: 11400000, guid: c52f3ef3277694240a689872f88fb37b, type: 2}
+  s2: {fileID: 11400000, guid: 14e513b5d0b333041bdeb0cf1a80493f, type: 2}
+  s3_Ultimate: {fileID: 11400000, guid: 71d3fb9ec2f21844aae222938badd16c, type: 2}
+  s4_Passive: {fileID: 0}
+  defaultArtifact: {fileID: 0}
+  awakeningLevel: 0
+  level: 1

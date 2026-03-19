@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabe14a8b3c0454ea778a547dbc325b, type: 3}
+  m_Name: Knight_S2_Provoke
+  m_EditorClassIdentifier: Assembly-CSharp::GachaRPG.SkillData
+  skillName: Taunt
+  description: Taunts an enemy, forcing them to attack this unit for 2 turns.
+  slot: 1
+  cooldownTurns: 3
+  soulCost: 0
+  soulGenerated: 0
+  effects:
+  - type: 2
+    multiplier: 0
+    target: 0
+    debuffToApply: 11
+    debuffChance: 0.8
+    debuffDuration: 2
+    crPushAmount: 0
+  hasSoulBurn: 0
+  soulBurnCost: 0
+  soulBurnEffects: []

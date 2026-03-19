@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabe14a8b3c0454ea778a547dbc325b, type: 3}
+  m_Name: Thief_S3_NightmareFinisher
+  m_EditorClassIdentifier: Assembly-CSharp::GachaRPG.SkillData
+  skillName: Nightmare Finisher
+  description: "Executes an enemy \u2014 deals 3x damage to targets below 30% HP.
+    Weakens on hit."
+  slot: 2
+  cooldownTurns: 5
+  soulCost: 0
+  soulGenerated: 0
+  effects:
+  - type: 0
+    multiplier: 2.5
+    target: 0
+    debuffToApply: 0
+    debuffChance: 0
+    debuffDuration: 0
+    crPushAmount: 0
+  - type: 2
+    multiplier: 0.25
+    target: 0
+    debuffToApply: 6
+    debuffChance: 0.9
+    debuffDuration: 2
+    crPushAmount: 0
+  hasSoulBurn: 0
+  soulBurnCost: 0
+  soulBurnEffects: []

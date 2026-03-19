@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabe14a8b3c0454ea778a547dbc325b, type: 3}
+  m_Name: Mage_S2_Tremor
+  m_EditorClassIdentifier: Assembly-CSharp::GachaRPG.SkillData
+  skillName: Tremor
+  description: Strikes all enemies with a shockwave, 50% chance to Stun each.
+  slot: 1
+  cooldownTurns: 4
+  soulCost: 0
+  soulGenerated: 0
+  effects:
+  - type: 0
+    multiplier: 0.8
+    target: 1
+    debuffToApply: 0
+    debuffChance: 0
+    debuffDuration: 0
+    crPushAmount: 0
+  - type: 2
+    multiplier: 0
+    target: 1
+    debuffToApply: 10
+    debuffChance: 0.5
+    debuffDuration: 1
+    crPushAmount: 0
+  hasSoulBurn: 0
+  soulBurnCost: 0
+  soulBurnEffects: []

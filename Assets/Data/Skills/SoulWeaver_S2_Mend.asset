@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabe14a8b3c0454ea778a547dbc325b, type: 3}
+  m_Name: SoulWeaver_S2_Mend
+  m_EditorClassIdentifier: Assembly-CSharp::GachaRPG.SkillData
+  skillName: Mend
+  description: Heals all allies and pushes their CR by 10%.
+  slot: 1
+  cooldownTurns: 3
+  soulCost: 0
+  soulGenerated: 0
+  effects:
+  - type: 1
+    multiplier: 0.6
+    target: 3
+    debuffToApply: 0
+    debuffChance: 0
+    debuffDuration: 0
+    crPushAmount: 0
+  - type: 4
+    multiplier: 0
+    target: 3
+    debuffToApply: 0
+    debuffChance: 0
+    debuffDuration: 0
+    crPushAmount: 0.1
+  hasSoulBurn: 0
+  soulBurnCost: 0
+  soulBurnEffects: []

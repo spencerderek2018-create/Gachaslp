@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606974a7ddee60d4eb500aecaff99203, type: 3}
+  m_Name: Placeholder_Ranger
+  m_EditorClassIdentifier: Assembly-CSharp::GachaRPG.HeroData
+  heroName: Tidal Archer
+  element: 1
+  role: 2
+  rarity: 2
+  baseHP: 5200
+  baseATK: 1200
+  baseDEF: 350
+  baseSpeed: 120
+  baseCritRate: 0.2
+  baseCritDamage: 1.6
+  baseEffectiveness: 0.5
+  baseEffectResist: 0.1
+  s1_BasicAttack: {fileID: 11400000, guid: 7b435cd58d46e80418de7af6adb32929, type: 2}
+  s2: {fileID: 11400000, guid: 69c690933a3951a4e93b1e67697d3cfd, type: 2}
+  s3_Ultimate: {fileID: 11400000, guid: 656e1bcfb7853594485e9d32ac8bc17e, type: 2}
+  s4_Passive: {fileID: 0}
+  defaultArtifact: {fileID: 0}
+  awakeningLevel: 0
+  level: 1
